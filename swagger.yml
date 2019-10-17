@@ -1,0 +1,46 @@
+swagger: "2.0"
+info:
+  description: Lido interview assignment
+  version: "1.0.0"
+  title: product feed
+basePath: "/qtalk/contacts/v1"
+schemes:
+  - "https"
+paths:
+  /create:
+    post:
+      x-swagger-router-controller: "write-controller"
+      operationId: "create"
+      parameters:
+        - in: "body"
+          name: "data"
+          required: false
+          schema:
+            type: object
+      responses:
+        200:
+          description: OK
+  /update:
+    post:
+      x-swagger-router-controller: "update-controller"
+      operationId: "update"
+      parameters:
+        - in: "body"
+          name: "data"
+          required: false
+          schema:
+            type: object
+      responses:
+        200:
+          description: OK
+  /read:
+    get:
+      x-swagger-router-controller: "read-controller"
+      operationId: "read"
+      parameters:
+        - in: "query"
+          name: "number"
+          type: "string"
+      responses:
+        200:
+          description: OK
